@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: frankfurtweed
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: SKUSHDROP_ADMIN_PASSWORD
+        sync: false
