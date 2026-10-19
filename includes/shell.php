@@ -14,6 +14,7 @@ function render_head(string $title, string $description, string $path, string $t
     $canonical = $isCountryLanding
         ? absolute_url($path)
         : absolute_url($path, ['lang' => $lang]);
+    $socialImage = absolute_url('assets/images/social-preview.png', ['v' => '20261019-1']);
     ?>
 <!doctype html>
 <html lang="<?= e($lang) ?>">
@@ -44,9 +45,15 @@ function render_head(string $title, string $description, string $path, string $t
   <meta property="og:description" content="<?= e($description) ?>">
   <meta property="og:url" content="<?= e($canonical) ?>">
   <meta property="og:site_name" content="Frankfurtweed">
-  <meta property="og:image" content="<?= e(absolute_url('assets/images/skushdrop-hero.png')) ?>">
+  <meta property="og:image" content="<?= e($socialImage) ?>">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Frankfurtweed — information, prévention et repères généraux">
   <meta property="og:locale" content="<?= $lang === 'de' ? 'de_DE' : ($lang === 'en' ? 'en_GB' : 'fr_CH') ?>">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="<?= e($socialImage) ?>">
+  <meta name="twitter:image:alt" content="Frankfurtweed — information, prévention et repères généraux">
   <script>try{document.documentElement.dataset.ageVerified=localStorage.getItem('skushdrop_age_verified')==='yes'?'true':'false'}catch(e){document.documentElement.dataset.ageVerified='false'}</script>
   <link rel="stylesheet" href="assets/css/v3.css?v=20261011-1">
   <link rel="stylesheet" href="assets/css/pages.css?v=20261011-1">
